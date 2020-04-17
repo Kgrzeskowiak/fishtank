@@ -16,9 +16,9 @@ module.exports =  class SocketHandler {
         });
     }
     sendNewPhReading(phValue) {
-        io.emit("newPhReading", phValue);
+        this.io.emit("newPhReading", phValue);
     }
     sendNewTemperatureReading(temperatureValue){
-        io.emit("newTemperatureReading", temperatureValue);
+        this.io.emit("newTemperatureReading", temperatureValue);
     }
 }
