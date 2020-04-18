@@ -5,7 +5,8 @@
       color="primary"
       dark
     >
-       <span class="mr-2">Aqua</span>
+       <span class="mr-2">Strażnik paletek</span>
+       <v-icon :x-large= true>mdi-fish</v-icon>
     </v-app-bar>
 
     <v-content>

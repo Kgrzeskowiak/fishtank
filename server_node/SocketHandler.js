@@ -21,4 +21,7 @@ module.exports =  class SocketHandler {
     sendNewTemperatureReading(temperatureValue){
         this.io.emit("newTemperatureReading", temperatureValue);
     }
+    sendNewAlert(){
+        this.io.emit("newAlert");
+    }
 }
