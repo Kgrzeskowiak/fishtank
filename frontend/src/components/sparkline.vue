@@ -1,11 +1,12 @@
 <template>
-<v-sparkline class=" font-weight-thin"
+<v-sparkline
       :value= value
       :gradient= gradient
       :smooth = radius
       :show-labels = labels
       :fill = fill
       :label-size= "8"
+      :line-width= lineWidth
     ></v-sparkline>
     
 </template>
@@ -15,9 +16,10 @@ export default {
     props : ['value'],
     data : () => ({
         radius : 8,
-        fill : true,
+        fill : false,
         labels : true,
-        gradient : ['#42b3f4'],
+        gradient : ['black'],
+        lineWidth : 2
     })
 }
 </script>

@@ -32,19 +32,23 @@ export default new Vuex.Store({
     },
     prepareTemperatureReadingsRecentHistory(state, data){
       data.slice(0,10).forEach(reading => {
-        state.temperatureReadingsHistory.push(reading.value)
+        if(state.temperatureReadingsHistory.length < 10) {
+          state.temperatureReadingsHistory.push(reading.value)
+        }
       })
       state.temperatureReadingsHistory.reverse();
     },
     preparePhReadingsRecentHistory(state, data){
       data.slice(0,10).forEach(reading => {
-        state.phReadingsHistory.push(reading.value)
+        if(state.phReadingsHistory.length < 10) {
+          state.phReadingsHistory.push(reading.value)
+        }
       })
       state.phReadingsHistory.reverse();
     },
     updateTemperatureRecentHistory(state, data) {
       state.temperatureReadingsHistory.push(data);
-      if(state.temperatureReadingsHistory.length > 10) {
+      while(state.temperatureReadingsHistory.length > 10) {
         state.temperatureReadingsHistory.shift();
       }
     },

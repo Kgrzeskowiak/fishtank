@@ -4,11 +4,10 @@ import router from './router'
 import store from './store'
 import vuetify from './plugins/vuetify'
 import VueSocketIO from 'vue-socket.io'
-import VueSvgGauge from 'vue-svg-gauge'
 import './registerServiceWorker'
 
 
-Vue.config.productionTip = false
+Vue.config.productionTip = true
 Vue.use(new VueSocketIO({
   debug: true,
   connection: 'http://192.168.1.9:5000',
@@ -18,7 +17,6 @@ Vue.use(new VueSocketIO({
       mutationPrefix: 'SOCKET_'
   },
 }))
-Vue.use(VueSvgGauge)
 new Vue({
   router,
   store,
